@@ -1,0 +1,2 @@
+O sistema criado para o bazar inovar foi feito inteiramente para a utilização de um plataforma de sorteio no qual o usuário possa escolher determinados números na loja fisica e poder ter controle dos números escolhidos quando estiver fora da loja, garantindo ao usuário total transparencia do sorteio.
+Esse sistema também conta com uma estrutura no qual possui uma API de conexão de dados com o firebase, o banco responsável por armazenar todos os dados inseridos ao longo do sorteio!
