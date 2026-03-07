@@ -1,24 +1,161 @@
-<<<<<<< HEAD
-@media screen and (min-width: 350px) and (max-width: 599px){
+@media screen and (min-width: 350px) and (max-width: 599pX){
+    /*TELA INVISIVEL*/
+    .menu-lateral{
+        width: 250px;
+    }
+    .componentes{
+        & h1{
+            font-size: 16px;
+        }
+        & a{ 
+            font-size: 13px;
+        }
+        & img{
+            height: 20px;
+        }
+        & iframe{
+            height: 350px;
+        }
+    }
+    
+    .menu, .banner, .funcoes, .rodape {
+        width: 350px;
+    }
+    .menu{
+        & h1{
+            font-size: 20px;
+        }
+    }
+    .logo{
+        height: 65px;
+    }
 
+    /*BANNER*/
+    .banner{
+        height: 100%;
+        grid-template: auto auto / auto;
+        place-items:center center;
+        padding: 10px 0px;
+    }
+    .avisos{
+        & h1{
+            font-size: 18px;
+        }
+        & p, strong{
+            font-size: 14px;
+        }
+    }
+    .imagem{
+        img{
+            height: 300px;
+        }
+    }
+
+    /*REGULAMENTO E VERIFICAÇÃO*/
+    .funcoes{
+        height: 100%;
+        padding: 20px 0px;
+        grid-template: auto auto / auto;
+    }
+    .estrutura{
+        & h1{
+            font-size: 14px;
+        }
+        & p{
+            font-size: 12px;
+        }
+    }
+
+    /*RODAPÉ*/
+    .rodape{
+        height: 100%;
+        padding: 20px 0px;
+        grid-template: auto auto auto / auto;
+        place-content: center center;
+        gap: 20px;
+    
+        & h1{
+            font-size: 14px;
+        }
+        & p{
+            font-size: 12px;
+        }
+    } 
 }
 
 @media screen and (min-width: 600px) and (max-width: 999px){
+    .menu, .banner, .funcoes, .rodape {
+        width: 580px;
+    }
+    .menu{
+        & h1{
+            font-size: 30px;
+        }
+    }
 
+    /*BANNER*/
+    .banner{
+        height: 100%;
+        grid-template: auto auto / auto;
+        place-items:center center;
+        padding: 10px 0px;
+    }
+    .avisos{
+        & h1{
+            font-size: 23px;
+        }
+        & p, strong{
+            font-size: 16px;
+        }
+    }
+    .imagem{
+        img{
+            height: 350px;
+        }
+    }
+
+    /*REGULAMENTO E VERIFICAÇÃO*/
+    .estrutura{
+        & h1{
+            font-size: 14px;
+        }
+        & p{
+            font-size: 12px;
+        }
+    }
+
+    /*RODAPÉ*/
+    .rodape{
+        text-align: center;
+    
+        & h1{
+            font-size: 14px;
+        }
+        & p{
+            font-size: 12px;
+        }
+    }
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1500px){
+@media screen and (min-width: 1000px) and (max-width: 1520px) {
 
-=======
-@media screen and (min-width: 350px) and (max-width: 599px){
-
-}
-
-@media screen and (min-width: 600px) and (max-width: 999px){
-
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1500px){
-
->>>>>>> ac0d3add94e0860b005d1a45e5c3e9e8a72c9c4d
+    .menu, .banner, .funcoes, .rodape {
+        width: 995px;
+    }
+    .banner{
+        height: 450px;
+    }
+    .avisos{
+        & h1{
+            font-size: 25px;
+        }
+        & p, strong{
+            font-size: 17px;
+        }
+    }
+    .imagem{
+        img{
+            height: 350px;
+        }
+    }
 }
