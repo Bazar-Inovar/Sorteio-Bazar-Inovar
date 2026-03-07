@@ -4,61 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fim de Ano Premiado Bazar Inovar">
     <title>Fim De Ano Premiado Inovar</title>
     <link rel="website icon" type="png" href="./assents/imagens/logo.png">
 
     <link rel="stylesheet" href="./assents/css/estilos.css">
     <link rel="stylesheet" href="./assents/css/responsividade.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <aside class="alertas"></aside>
 
-        <nav class="menu">
-            <h1>FIM DE ANO PREMIADO</h1>
-            <img src="./assents/imagens/logo.png" alt="logo-inovar">
-            <h2>FIM DE ANO PREMIADO</h2>
-        </nav>
+    <article class="formulario">
+        <img src="./assents/imagens/fechar-white.svg" alt="fechar tabela" class="close" id="fechar-formulario">
 
+        <form id="formulario">
+            <img src="./assents/imagens/logo.png" alt="logo" class="logo">
+            <fieldset>
+                <legend>USUÁRIO: </legend>
+                <input type="text" id="usuario">
+            </fieldset>
+
+            <fieldset>
+                <legend>SENHA: </legend>
+                <input type="password" id="senha">
+            </fieldset>
+
+            <input type="button" value="ENTRAR" class="botao-form" id="verificacao">
+        </form>
+    </article>
+
+    <article class="container-menu">
+        <section class="menu-lateral">
+            <nav class="inicio">
+                <img src="./assents/imagens/logo.png" alt="logo" class="logo">
+                <img src="./assents/imagens/fechar-blue.svg" alt="fechar menu" class="fml">
+            </nav>
+
+            <div class="componentes">
+                <h1>ATALHOS</h1>
+                <a id="abrir-formulario">
+                    <img src="./assents/imagens/adm.svg" alt="administrador">
+                    <p>Administrador</p>
+                </a>
+            </div>
+
+            <div class="componentes">
+                <h1>REDES SOCIAIS</h1>
+                <a href="https://www.instagram.com/bazar.inovar/">
+                    <img src="./assents/imagens/instagram.png" alt="administrador">
+                    <p>Instagram</p>
+                </a>
+            </div>
+
+            <div class="componentes">
+                <h1>LOCALIZAÇÃO</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.503763378094!2d-42.85451952365371!3d-22.746678732170547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99c1bb58b84dd9%3A0x54ca71e88101629c!2sBazar%20Inovar!5e0!3m2!1spt-BR!2sbr!4v1772674023601!5m2!1spt-BR!2sbr"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </article>    
+
+    <nav class="menu">
+        <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo">
+        <h1>FIM DE ANO PREMIADO</h1>
+        <img src="./assents/imagens/menu.svg" alt="menu" class="icone-menu">
+    </nav>
+
+    <main>
         <section class="banner">
-            <div class="imagens">
-                <img src="./assents/imagens/airfryer.jpg" alt="airfryer">
-                <img src="./assents/imagens/sanduicheira.jpg" alt="sanduicheira">
-                <img src="./assents/imagens/chaleira.jpg" alt="jarra-eletrica">
-            </div>
-
             <div class="avisos">
-                <nav>
-                 <h1>Nas compras acima de R$80,00 você poderá escolher 1 (um) número para concorrer aos prêmios!</h1>
-                <h2>Os sorteios acontecerão no dia 30/12/2025, Fique ligado!</h2>   
-                </nav>
-                
-                <nav>
-                  <h3>Já escolheu seu número em nossa loja? Confira abaixo e veja se você está participando!</h3>
-                    <h3>Verifique o regulamento para mais informações.</h3>  
-                </nav>
+                <h1>NAS COMPRAS ACIMA DE R$80,00 VOCÊ PODERÁ ESCOLHER 1 (UM) NÚMERO PARA CONCORRER AOS PRÊMIOS!</h1>
+                <p>Os sorteios acontecerão no dia 30/12/2025, <strong>Fique ligado!</strong></p>
+                <p>Já escolheu seu número em nossa loja? Confira abaixo e veja se você está participando!</p>
+                <p>Verifique o regulamento para mais informações.</p>
+                <small>Imagens meramente ilustrativas</small>
             </div>
-        </section>
-
-        <section class="estruturas">
-            <div class="estrutura">
-                <h1>Regulamento do sorteio</h1>
-                <a href="./assents/regulamento.docx">Baixar Regulamento</a>
+            <div class="imagem">
+                <img src="./assents/imagens/prêmios.png" alt="">
             </div>
 
-            <div class="estrutura">
-                <h1>Verificador de Números</h1>
-                <p>Insira seu número de telefone para verificar quais números você escolheu!</p>
-                <nav class="form">
-                    <input type="number" id="telefone" placeholder="telefone com DDD" maxlength="11">
-                    <button id="botao-buscar">VER NÚMEROS</button> 
-                </nav>
-                <div id="resultado"></div>
-            </div>
         </section>
+    </main>
+
+    <header class="tabelaUsuario">
+        <img src="./assents/imagens/fechar-white.svg" alt="fechar tabela" class="close" id="fechar-tabela">
+        <div id="resultado"></div>
     </header>
+    
+    <section class="funcoes">
+        <div class="estrutura">
+            <h1>REGULAMENTO DO SORTEIO</h1>
+            <p>O regulamento garante que os direitos e deveres entre a organização e os participantes sejam respeitados, além disso, é fonte de prova para eventuais fraudes ou tentativas de burlar qualquer regra do evento.</p>
+            <a href="./assents/regulamento.pdf">BAIXAR REGULAMENTO</a>
+        </div>
+
+        <div class="estrutura" id="verificador">
+            <h1>INSIRA SEU NÚMERO DE TELEFONE PARA VERIFICAR QUAIS NÚMEROS VOCÊ ESCOLHEU!</h1>
+            <fieldset>
+                <legend>NÚMERO COM DDD:</legend>
+                <input type="number" id="telefone" placeholder="ex: 21123456789">
+            </fieldset>
+
+            <button id="botao-buscar">VERIFICAR NÚMEROS</button>
+        </div>
+    </section>
+
+    <footer>
+        <section class="rodape" id="loja">
+            <div class="base">
+                <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo-footer">
+                <p>Bazar Inovar © 2026.</p>
+                <p>Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="base">
+                <h1>HORÁRIOS DE FUNCIONAMENTO</h1>
+                <p>Seg - Sex: 7:30 ás 19:00</p>
+                <p>Sábado: 7:30 ás 16:00</p>
+            </div>
+    
+            <div class="base">
+                <h1>NOS SIGA NAS REDES SOCIAIS</h1>
+                <a href="https://www.instagram.com/bazar.inovar/">
+                    <img src="./assents/imagens/instagram-white.png" alt="instagram">
+                    <p>Instagram</p>
+                </a>
+            </div>
+        </section>
+    </footer>
 </body>
 <script src="./assents/js/script.js" type="module"></script>
 
