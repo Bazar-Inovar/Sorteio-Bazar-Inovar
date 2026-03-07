@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @media screen and (min-width: 350px) and (max-width: 599px){
 
 }
@@ -8,4 +9,16 @@
 
 @media screen and (min-width: 1000px) and (max-width: 1500px){
 
+=======
+@media screen and (min-width: 350px) and (max-width: 599px){
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 999px){
+
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1500px){
+
+>>>>>>> ac0d3add94e0860b005d1a45e5c3e9e8a72c9c4d
 }
