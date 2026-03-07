@@ -19,7 +19,7 @@
     }
     
     .menu, .banner, .funcoes, .rodape {
-        width: 350px;
+        width: 95%;
     }
     .menu{
         & h1{
@@ -85,7 +85,7 @@
 
 @media screen and (min-width: 600px) and (max-width: 999px){
     .menu, .banner, .funcoes, .rodape {
-        width: 580px;
+        width: 90%;
     }
     .menu{
         & h1{
