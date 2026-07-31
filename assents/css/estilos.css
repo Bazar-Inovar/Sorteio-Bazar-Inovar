@@ -153,7 +153,7 @@ body, main, footer{
         font-size: 40px;
         font-weight: 500;
         font-family: "Gochi Hand", cursive;
-        color:#a60002;
+        color:#3a4e67;
     }
 }
 .logo{
@@ -169,7 +169,7 @@ body, main, footer{
 /*BANNER*/
 main{
     width: 100%;
-    background-color: #a60002;
+    background-color: #3a4e67;
 }
 .banner{
     display: grid;
