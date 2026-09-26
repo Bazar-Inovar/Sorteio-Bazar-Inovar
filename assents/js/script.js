@@ -29,16 +29,12 @@ async function buscarNumeros() {
     
     resultadoDiv.innerHTML = "";
     
-    off()
-    
     if (telefone === "") {
-        alerta.innerHTML = "Por favor, insira seu número de telefone.";
-        alerta.style.display = 'flex';
+        alerta('Por favor, insira seu número de telefone.')
         return;
     }
     else if (telefone.length !== 11 ){
-        alerta.innerHTML = "Insira um número de telefone válido.";
-        alerta.style.display = 'flex';
+        alerta('Insira um número de telefone válido.')
         return;
     }
     else{
@@ -49,8 +45,7 @@ async function buscarNumeros() {
             const snapshot = await get(sorteioRef);
             
             if (!snapshot.exists()) {
-                alerta.innerHTML = "Nenhum dado encontrado.";
-                alerta.style.display = 'flex';
+                alerta('Nenhum dado encontrado.');
                 return;
             }
             
@@ -69,8 +64,7 @@ async function buscarNumeros() {
             });
             
             if (registros.length === 0) {
-                alerta.innerHTML = "Nenhum número do sorteio foi relacionado a este telefone.";
-                alerta.style.display = 'flex';
+                alerta('Nenhum número do sorteio foi relacionado a este telefone.')
                 return;
             }
             
@@ -99,8 +93,7 @@ async function buscarNumeros() {
             
         } catch (error) {
             console.error(error);
-            alerta.innerHTML = "Ocorreu um erro ao buscar seus números, por favor tente novamente mais tarde!";
-            alerta.style.display = 'flex';
+            alerta('Ocorreu um erro ao buscar seus números, por favor tente novamente mais tarde!');
         }
     }
 }

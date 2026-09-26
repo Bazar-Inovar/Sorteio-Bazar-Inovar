@@ -3,7 +3,7 @@
     scroll-behavior: smooth;
     text-decoration: none;
     font-family: "Montserrat", 'Segoe UI';
-    /* transition: all 0.8s ease; */
+    transition: all 0.8s ease;
     color: #3a4e67;
 }
 a{
@@ -19,25 +19,12 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.tabelaUsuario, .base, .rodape{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /*CAMPO DE ALERTAS*/
 .alertas{
-    position: fixed;
-    background-color: #ff2023;
-    border: 2px solid #F9FAFB;
-    border-radius: 10px;
-    text-align: center;
     padding: 10px;
-    top: 10px;
-    z-index: +99;
-    color: #F9FAFB;
-    font-size: 14px;
-    display: none;
+    opacity: 0;
+    z-index: -99;
+    transform: translateY(50px);
 }
 
 /*MENU*/
@@ -47,6 +34,7 @@ input[type=number] {
     width: 100%;
     display: none;
     backdrop-filter: blur(5px);
+
     & i{
         cursor: pointer;
     }
@@ -167,18 +155,6 @@ input[type=number] {
     & thead, td, tr, th{
         color: #3a4e67;
     }
-}
-
-
-
-/*TODOS OS BOTÕES DE FECHAMENTO FLUTUANTES*/
-.close{
-    padding: 5px;
-    cursor: pointer;
-    height: 40px;
-    padding: 5px;
-    box-shadow: 0px 0px 5px #F9FAFB;
-    border-radius: 10px;
 }
 
 /*RODAPE*/

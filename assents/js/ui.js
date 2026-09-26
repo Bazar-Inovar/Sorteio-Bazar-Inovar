@@ -1,9 +1,17 @@
 /*CAMPO DE ALERTAS*/
-let alerta = document.querySelector(".alertas")
-function off(){
+function alerta(texto){
+    let aviso = document.querySelector('.alertas');
+    aviso.innerHTML = texto;
+    aviso.style.opacity = '1';
+    aviso.style.zIndex = '+99';
+    aviso.innerHTML = texto;
+    aviso.style.transform = 'translateY(0px)';
+
     setTimeout(() => {
-        alerta.style.display = 'none';
-    }, 5000);
+        aviso.style.zIndex = '-99';
+        aviso.style.opacity = '0';
+        aviso.style.transform = 'translateY(50px)';
+    }, 6000);
 }
 
 /*TABELA AONDE O USUÁRIO CONSULTA OS SEUS NUMEROS ESCOLHIDOS*/
@@ -31,5 +39,3 @@ function abrirFormulario(){
 function fecharFormulario(){
     container_formulario.style.display = 'none'
 }
-
-

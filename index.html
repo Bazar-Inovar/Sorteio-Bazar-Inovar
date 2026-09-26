@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <aside class="alertas"></aside>
+    <article class="d-flex justify-content-center">
+        <aside class="alertas rounded-2 position-fixed p-3 mt-3 alert alert-danger fw-medium"></aside>
+    </article>
 
     <article class="modal position-fixed z-2 flex-column" id="container-menu">
         <section class="menu-lateral position-absolute p-3">
@@ -67,6 +69,7 @@
     </nav>
 
     <section id="carouselExampleIndicators" class="carousel slide container-banner container-fluid">
+
         <section class="banner container-fluid container-md">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -161,7 +164,7 @@
     </section>
 
     <footer class="container-fluid h-100 p-4">
-        <section class="rodape container-fluid container-md justify-content-between align-items-center text-center flex-column flex-md-row h-100" id="loja">
+        <section class="rodape container-fluid container-md d-flex  justify-content-between align-items-center text-center flex-column flex-md-row" id="loja">
             <div class="base gap-2">
                 <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo rounded-circle">
                 <p>Bazar Inovar © 2026.</p>
