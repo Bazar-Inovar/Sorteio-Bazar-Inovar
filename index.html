@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sorteio Bazar Inovar">
+    <meta name="Ian Barbosa" content="Versão Final Atualizada">
     <title>SORTEIO DE ANIVERSÁRIO</title>
     <link rel="website icon" type="png" href="./assents/imagens/logo.png">
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assents/css/estilos.css">
     <link rel="stylesheet" href="./assents/css/responsividade.css">
-
     <!--FONTES EXPORTADAS-->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -17,125 +20,172 @@
 <body>
     <aside class="alertas"></aside>
 
-    <article class="formulario">
-        <img src="./assents/imagens/fechar-white.svg" alt="fechar tabela" class="close" id="fechar-formulario">
+    <article class="modal position-fixed z-2 flex-column" id="container-menu">
+        <section class="menu-lateral position-absolute p-3">
+            <nav class="inicio d-flex justify-content-between align-items-center border-bottom pt-2 pb-2">
+                <img src="./assents/imagens/logo.png" alt="logo" class="logo rounded-circle">
 
-        <form id="formulario">
-            <img src="./assents/imagens/logo.png" alt="logo" class="logo">
-            <fieldset>
-                <legend>USUÁRIO: </legend>
-                <input type="text" id="usuario">
-            </fieldset>
-
-            <fieldset>
-                <legend>SENHA: </legend>
-                <input type="password" id="senha">
-            </fieldset>
-
-            <input type="button" value="ENTRAR" class="botao-form" id="verificacao">
-        </form>
-    </article>
-
-    <article class="container-menu">
-        <section class="menu-lateral">
-            <nav class="inicio">
-                <img src="./assents/imagens/logo.png" alt="logo" class="logo">
-                <img src="./assents/imagens/fechar-blue.svg" alt="fechar menu" class="fml">
+                <i class="bi bi-x-circle-fill" onclick="fecharMenu()"></i>
             </nav>
 
-            <div class="componentes">
-                <h1>ATALHOS</h1>
-                <a id="abrir-formulario">
-                    <img src="./assents/imagens/adm.svg" alt="administrador">
-                    <p>Administrador</p>
+            <div class="componentes mt-4 flex-column gap-5">
+                <h1 class="fs-5 fw-medium">REDES SOCIAIS</h1>
+
+                <a href="https://www.instagram.com/bazar.inovar/" class="w-100 d-flex align-items-center pt-2 pb-2 ps-2 gap-2 rounded-2">
+                    <i class="bi bi-instagram" title="instagram"></i>
+                    <p class="mb-0">Instagram</p>
                 </a>
             </div>
 
-            <div class="componentes">
-                <h1>REDES SOCIAIS</h1>
-                <a href="https://www.instagram.com/bazar.inovar/">
-                    <img src="./assents/imagens/instagram.png" alt="administrador">
-                    <p>Instagram</p>
-                </a>
-            </div>
-
-            <div class="componentes">
-                <h1>LOCALIZAÇÃO</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9495.802314967448!2d-42.851945!3d-22.746684!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99c1bb58b84dd9%3A0x54ca71e88101629c!2sBazar%20Inovar!5e1!3m2!1spt-BR!2sbr!4v1772855933109!5m2!1spt-BR!2sbr"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="componentes mt-4 flex-column gap-5">
+                <h1 class="fs-5 fw-medium">LOCALIZAÇÃO</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9495.802314967448!2d-42.851945!3d-22.746684!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99c1bb58b84dd9%3A0x54ca71e88101629c!2sBazar%20Inovar!5e1!3m2!1spt-BR!2sbr!4v1772855933109!5m2!1spt-BR!2sbr"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização"></iframe>
             </div>
         </section>
-    </article>    
+    </article>  
+    
+    <article class="modal justify-content-center align-items-center" id="tabelaUsuario">
+        <div class="consulta p-5 rounded-2">
+            <div class="w-100 d-flex align-items-center justify-content-between mb-4">
+                <p id="number" class="mb-0 fw-semibold"></p>
+
+                <i class="bi bi-x-circle-fill" onclick="fecharTabela()"></i>
+            </div>
+
+
+            <div id="resultado"></div>
+        </div>
+    </article>
 
     <!--PARTE INICIAL VISIVEL DO SITE-->
-    <nav class="menu">
-        <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo">
-        <h1>SORTEIO DE ANIVERSÁRIO</h1>
-        <img src="./assents/imagens/menu.svg" alt="menu" class="icone-menu">
+    <nav class="menu container-fluid container-md d-flex justify-content-between align-items-center">
+        <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo rounded-circle">
+
+        <h1 class="fs-1 fw-semibold text-center mb-0">SORTEIO DE ANIVERSÁRIO</h1>
+
+        <i class="bi bi-list-stars" onclick="abrirMenu()"></i>
     </nav>
 
-    <main>
-        <section class="banner">
-            <div class="avisos">
-                <h1>NAS COMPRAS ACIMA DE R$50,00 VOCÊ PODERÁ ESCOLHER 1 (UM) NÚMERO PARA CONCORRER AO PRÊMIO!</h1>
-                <p>O sorteio acontecerá no dia 28/08/2026, <strong>Fique ligado!</strong></p>
-                <p>Já escolheu seu número em nossa loja? Confira abaixo e veja se você está participando!</p>
-                <p>Verifique o regulamento para mais informações.</p>
-                <small>Imagens meramente ilustrativas</small>
+    <section id="carouselExampleIndicators" class="carousel slide container-banner container-fluid">
+        <section class="banner container-fluid container-md">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            
-            <div class="imagem">
-                <img src="./assents/imagens/Chuveiro (1).png" alt="">
-            </div>
-        </section>
-    </main>
-
-    <header class="tabelaUsuario">
-        <img src="./assents/imagens/fechar-white.svg" alt="fechar tabela" class="close" id="fechar-tabela">
-        <div id="resultado"></div>
-    </header>
     
-    <section class="funcoes">
-        <div class="estrutura">
-            <h1>REGULAMENTO DO SORTEIO</h1>
-            <p>O regulamento garante que os direitos e deveres entre a organização e os participantes sejam respeitados, além disso, é fonte de prova para eventuais fraudes ou tentativas de burlar qualquer regra do evento.</p>
-            <a href="./assents/regulamento.pdf">BAIXAR REGULAMENTO</a>
+            <div class="carousel-inner">
+              <div class="carousel-item active p-3">
+                <div class="avisos p-3 gap-2 text-center align-content-center">
+                    <h1 class="fs-3">NAS COMPRAS ACIMA DE R$50,00 VOCÊ PODERÁ ESCOLHER 1 (UM) NÚMERO PARA CONCORRER AO PRÊMIO!</h1>
+                    <p class="fs-5">O sorteio acontecerá no dia 28/08/2026, <strong>Fique ligado!</strong></p>
+                    <p class="fs-5">Já escolheu seu número em nossa loja? <br> Confira abaixo e veja se você está participando!</p>
+                    <p class="fs-5 mb-0">Verifique o regulamento para mais informações.</p>
+                    <small>
+                        Próximo 
+                        <i class="bi bi-arrow-right"></i>
+                    </small>
+                </div>
+              </div>
+
+              <div class="carousel-item p-3">
+                <div class="avisos p-2 m-1 gap-2  align-content-center text-center">
+                    <div class="d-flex justify-content-around align-items-center gap-3 flex-column flex-md-row">
+                        <div>
+                            <i class="bi bi-1-circle fs-2"></i>
+                            <h1>Prêmio</h1>
+                            <p class="fs-4 fw-bolder mb-0">Chuveiro Hydra  Space <br> Power 4T</p>
+                            <p>Disponivel na versão 127v</p>
+                        </div>
+
+                        <small>Imagem meramente ilustrativa</small>
+    
+                        <img src="./assents/imagens/Chuveiro (1).png" alt="produtos">
+                    </div>
+                </div>
+              </div>
+
+              <div class="carousel-item p-3">
+                <div class="avisos p-2 m-1 gap-2 text-lg-center justify-content-center align-content-center text-center">
+                    <div class="d-flex justify-content-around align-items-center gap-3 flex-column flex-md-row">
+                        <div>
+                            <i class="bi bi-2-circle fs-2"></i>
+                            <h1>Prêmio</h1>
+                            <p class="fs-4 fw-bolder mb-0">Alicate Universal <br> Tramontina 8"</p>
+                            <p></p>
+                        </div>
+
+                        <small>Imagem meramente ilustrativa</small>
+    
+                        <img src="./assents/imagens/alicate_img.png" alt="produtos">
+                    </div>
+                </div>
+              </div>
+        </section>
         </div>
 
-        <div class="estrutura" id="verificador">
-            <h1>INSIRA SEU NÚMERO DE TELEFONE PARA VERIFICAR QUAIS NÚMEROS VOCÊ ESCOLHEU!</h1>
-            <fieldset>
-                <legend>NÚMERO COM DDD:</legend>
-                <input type="number" id="telefone" placeholder="ex: 21123456789">
-            </fieldset>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </section>
+    
+    <section class="funcoes container-fluid container-md d-flex p-4 gap-3 text-center flex-column flex-md-row">
+        <div class="estrutura col-12 col-md-6  rounded-2 p-5">
+            <h1 class="fs-5 fw-semibold text-decoration-underline">REGULAMENTO DO SORTEIO</h1>
 
-            <button id="botao-buscar">VERIFICAR NÚMEROS</button>
+            <p class="fw-medium mt-3 mb-3">O regulamento garante que os direitos e deveres entre a organização e os participantes sejam respeitados, além disso, é fonte de prova para eventuais fraudes ou tentativas de burlar qualquer regra do evento.</p>
+
+            <div>
+                <a href="./assents/regulamento.pdf" class="btn">Baixar Regulamento</a>
+            </div>
+        </div>
+
+        <div class="estrutura col-12 col-md-6 rounded-2 p-5" id="verificador">
+            <h1 class="fs-5 fw-semibold text-decoration-underline">VERIFIQUE QUAIS NÚMEROS VOCÊ ESCOLHEU!</h1>
+            <p class="fw-medium">Insira seu número  de telefone com o DDD para verificar quais números foram inseridos</p>
+
+            <div class="d-flex justify-content-center">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="telefone" placeholder="Telefone">
+                    <label for="telefone">Telefone</label>
+                </div>
+            </div>
+
+            <button class="btn" id="btn-buscar">Verificar Números</button>
         </div>
     </section>
 
-    <footer>
-        <section class="rodape" id="loja">
-            <div class="base">
-                <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo">
+    <footer class="container-fluid h-100 p-4">
+        <section class="rodape container-fluid container-md justify-content-between align-items-center text-center flex-column flex-md-row h-100" id="loja">
+            <div class="base gap-2">
+                <img src="./assents/imagens/logo.png" alt="logo-inovar" class="logo rounded-circle">
                 <p>Bazar Inovar © 2026.</p>
                 <p>Todos os direitos reservados.</p>
             </div>
             
-            <div class="base">
-                <h1>HORÁRIOS DE FUNCIONAMENTO</h1>
+            <div class="base gap-2">
+                <h1 class="fs-6 fw-bold">HORÁRIOS DE FUNCIONAMENTO</h1>
                 <p>Seg - Sex: 7:30 ás 19:00</p>
                 <p>Sábado: 7:30 ás 16:00</p>
             </div>
     
-            <div class="base">
-                <h1>NOS SIGA NAS REDES SOCIAIS</h1>
-                <a href="https://www.instagram.com/bazar.inovar/">
-                    <img src="./assents/imagens/instagram-white.png" alt="instagram">
-                    <p>Instagram</p>
+            <div class="base gap-2">
+                <h1 class="fs-6 fw-bold">NOS SIGA NAS REDES SOCIAIS</h1>
+                <a href="https://www.instagram.com/bazar.inovar/" class="w-100 d-flex align-items-center justify-content-center pt-2 pb-2 ps-2 gap-2 rounded-2" title="Instagram">
+                    <i class="bi bi-instagram" title="instagram"></i>
+                    <p class="mb-0">Instagram</p>
                 </a>
             </div>
         </section>
     </footer>
 </body>
 <script src="./assents/js/script.js" type="module"></script>
+<script src="./assents/js/ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
