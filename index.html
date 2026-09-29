@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sorteio Bazar Inovar">
-    <meta name="Ian Barbosa" content="Versão Final Atualizada">
+    <meta name="Ian Barbosa" content="Versão Final">
     <title>SORTEIO DE ANIVERSÁRIO</title>
     <link rel="website icon" type="png" href="./assents/imagens/logo.png">
     <!--CSS-->
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assents/css/estilos.css">
     <link rel="stylesheet" href="./assents/css/responsividade.css">
+    <link rel="stylesheet" href="./assents//css/ajuste.css">
     <!--FONTES EXPORTADAS-->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -22,7 +23,7 @@
         <aside class="alertas rounded-2 position-fixed p-3 mt-3 alert alert-danger fw-medium"></aside>
     </article>
 
-    <article class="modal position-fixed z-2 flex-column" id="container-menu">
+    <article class="modal w-100 position-fixed z-2 flex-column" id="container-menu">
         <section class="menu-lateral position-absolute p-3">
             <nav class="inicio d-flex justify-content-between align-items-center border-bottom pt-2 pb-2">
                 <img src="./assents/imagens/logo.png" alt="logo" class="logo rounded-circle">
@@ -46,7 +47,7 @@
         </section>
     </article>  
     
-    <article class="modal justify-content-center align-items-center" id="tabelaUsuario">
+    <article class="modal w-100 position-fixed z-2 justify-content-center align-items-center" id="tabelaUsuario">
         <div class="consulta p-5 rounded-2">
             <div class="w-100 d-flex align-items-center justify-content-between mb-4">
                 <p id="number" class="mb-0 fw-semibold"></p>
@@ -68,8 +69,7 @@
         <i class="bi bi-list-stars" onclick="abrirMenu()"></i>
     </nav>
 
-    <section id="carouselExampleIndicators" class="carousel slide container-banner container-fluid">
-
+    <section id="carouselExampleIndicators" class="container-banner carousel slide container-fluid">
         <section class="banner container-fluid container-md">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -79,7 +79,7 @@
     
             <div class="carousel-inner">
               <div class="carousel-item active p-3">
-                <div class="avisos p-3 gap-2 text-center align-content-center">
+                <div class="avisos p-3 gap-2 rounded-2 text-center align-content-center">
                     <h1 class="fs-3">NAS COMPRAS ACIMA DE R$50,00 VOCÊ PODERÁ ESCOLHER 1 (UM) NÚMERO PARA CONCORRER AO PRÊMIO!</h1>
                     <p class="fs-5">O sorteio acontecerá no dia 28/08/2026, <strong>Fique ligado!</strong></p>
                     <p class="fs-5">Já escolheu seu número em nossa loja? <br> Confira abaixo e veja se você está participando!</p>
@@ -92,7 +92,7 @@
               </div>
 
               <div class="carousel-item p-3">
-                <div class="avisos p-2 m-1 gap-2  align-content-center text-center">
+                <div class="avisos p-2 m-1 gap-2 rounded-2 align-content-center text-center">
                     <div class="d-flex justify-content-around align-items-center gap-3 flex-column flex-md-row">
                         <div>
                             <i class="bi bi-1-circle fs-2"></i>
@@ -109,7 +109,7 @@
               </div>
 
               <div class="carousel-item p-3">
-                <div class="avisos p-2 m-1 gap-2 text-lg-center justify-content-center align-content-center text-center">
+                <div class="avisos p-2 m-1 gap-2 rounded-2 align-content-center text-center">
                     <div class="d-flex justify-content-around align-items-center gap-3 flex-column flex-md-row">
                         <div>
                             <i class="bi bi-2-circle fs-2"></i>
@@ -127,18 +127,18 @@
         </section>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
     </section>
     
     <section class="funcoes container-fluid container-md d-flex p-4 gap-3 text-center flex-column flex-md-row">
-        <div class="estrutura col-12 col-md-6  rounded-2 p-5">
+        <div class="estrutura col-12 col-md-6 rounded-2 p-5">
             <h1 class="fs-5 fw-semibold text-decoration-underline">REGULAMENTO DO SORTEIO</h1>
 
             <p class="fw-medium mt-3 mb-3">O regulamento garante que os direitos e deveres entre a organização e os participantes sejam respeitados, além disso, é fonte de prova para eventuais fraudes ou tentativas de burlar qualquer regra do evento.</p>
@@ -190,5 +190,4 @@
 <script src="./assents/js/script.js" type="module"></script>
 <script src="./assents/js/ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </html>

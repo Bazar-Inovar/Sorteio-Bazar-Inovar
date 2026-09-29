@@ -1,6 +1,11 @@
 @media (max-width: 768px){
+    /*MENU*/
+    .logo{
+        height: 70px;
+    }
     .banner{
         height: 600px;
+
     }
     .avisos{
         height: 500px;
@@ -8,8 +13,8 @@
         & img{
             height: 200px;
         }
-    }
-    small{
-        display:none;
+        small{
+            display:none;
+        }
     }
 }
