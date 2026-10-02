@@ -45,7 +45,7 @@ async function buscarNumeros() {
             const snapshot = await get(sorteioRef);
             
             if (!snapshot.exists()) {
-                alerta('Nenhum dado encontrado.');
+                alerta('Atualmente não há nenhum sorteio acontecendo no momento, e por isso não há nenhum cliente cadastrado.');
                 return;
             }
             
@@ -93,7 +93,7 @@ async function buscarNumeros() {
             
         } catch (error) {
             console.error(error);
-            alerta('Ocorreu um erro ao buscar seus números, por favor tente novamente mais tarde!');
+            alerta('Erro ao consultar, tente mais tarde!');
         }
     }
 }
